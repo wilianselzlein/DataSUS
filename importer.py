@@ -1,6 +1,7 @@
+# encongind='utf-8'
 import downloader
 
-# encongind='utf-8'
-def execute(type_sys, state, year, month):
-    downloader.execute(type_sys, state, year, month)
-    
+def execute(origin, type_sys, state, year, month):
+    #TODO check required origin, type_sys, state
+    downloader.execute(origin, type_sys, state, year, month)
+

@@ -1,24 +1,18 @@
-# import os
+import os
 import logging
 
+logger_name = "main"
 ftp_datasus = "ftp.datasus.gov.br"
+cwd_ftp = "dissemin/publicos/{}SUS/200801_/Dados/"
 
-# postgres_host = os.environ.get("POSTGRES_URI", "127.0.0.1")
-# postgres_db = "s4" + cli
-# postgres_dbpostgres = "postgres"
-# postgres_user = "postgres"
-# postgres_pass = "postgres"
-# postgres_port = 5432
-#
-# dsn = (
-#     "DRIVER={{IBM DB2 ODBC DRIVER}};"
-#     "DATABASE={0};"
-#     "HOSTNAME={1};"
-#     "PORT={2};"
-#     "PROTOCOL=TCPIP;"
-#     "UID={3};"
-#     "PWD={4};"
-# ).format(dsn_database, dsn_hostname, dsn_port, dsn_uid, dsn_pwd)
-#
+postgres_driver = "postgresql"
+postgres_user = "postgres"
+postgres_pass = "postgres"
+postgres_host = os.environ.get("POSTGRES_URI", "localhost") #127.0.0.1
+postgres_db = "datasus"
+postgres_port = 5432
+postgres_dsn = "{0}://{1}:{2}@{3}:{4}/{5}".format(postgres_driver, postgres_user, postgres_pass, postgres_host, postgres_port, postgres_db)
+
+chunks = 500000
 
 DEBUG_LEVEL = logging.DEBUG

@@ -1,5 +1,7 @@
 import os
 import sys
+import log
+import config
 
 # print(sys.path)
 # sys.path.append("/home/ivo/Dropbox/DataSUS/DataSUS/venv/")
@@ -20,6 +22,8 @@ from _readdbc import ffi, lib
 #         if file.endswith(".dbf"):
 #                 dbf = Dbf5("data/" + file, codec='utf-8')
 #                 dbf.to_csv("data/csv/" + os.path.splitext(file)[0] + ".csv")
+
+log = log.get_logger(config.logger_name)
 
 def dbc2dbf(infile, outfile):
     """
@@ -57,21 +61,25 @@ def read_dbc(file, encoding='utf-8', raw=False):
         #db = dbf.Table(tf.name)
         try:
             db = DBF(tf.name, encoding='latin1', raw=raw)
-        except: 
-            print('erro')
+        except:
+            log.fatal("Error read DBF {}".format(tf.name))
             return
 
     # df = pd.DataFrame(iter(dbf))
     # dbf = Dbf5(tf.name, codec=encoding)
     # df =  dbf.to_dataframe() # gpd.GeoDataFrame(list(dbf))
-    csvfile = open(file + '.csv', 'w', newline='')
-    writer = csv.writer(csvfile, delimiter='|')
-    writer.writerow(db.field_names)
-    for record in db:
-        writer.writerow(list(record.values()))
-    del db
-    del writer
-
+    if not os.path.isfile(file + '.csv'):
+        csvfile = open(file + '.csv', 'w', newline='')
+        log.info("Creating CSV file {}...".format(file + '.csv'))
+        writer = csv.writer(csvfile, delimiter='|')
+        writer.writerow(db.field_names)
+        for record in db:
+            writer.writerow(list(record.values()))
+        del db
+        del writer
+    
+        log.info("Created CSV file {}...".format(file))
+    
     csv2df.execute(file + '.csv')
     # os.system("zip " + file + ".zip " + file + ".csv > /dev/null")
     # os.system("rm " + file + ".csv")

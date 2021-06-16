@@ -4,3 +4,4 @@ coloredlogs==7.3
 pandas
 numpy
 dbfread
+sqlalchemy
