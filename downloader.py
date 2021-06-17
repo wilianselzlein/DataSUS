@@ -15,6 +15,7 @@ def execute(origin, type_sys, state, year, month, encoding="iso-8859-1"):
     # ftp://ftp.datasus.gov.br/dissemin/publicos/SIASUS/200801_/Dados/
     ftp.cwd(config.cwd_ftp.format(origin))
     all_files = ftp.nlst(".")
+    ftp.quit()
     state_prefix = type_sys + state  # "SPSP18" "ERSP" "RJSP" "RDSP"
 
     files = sorted([file for file in all_files if state_prefix in file])
@@ -28,9 +29,14 @@ def execute(origin, type_sys, state, year, month, encoding="iso-8859-1"):
         if not os.path.isfile(file):
             log.info("Downloading {}...".format(file))
             fp = open(file, "wb")
+
+            ftp = FTP(config.ftp_datasus)
+            ftp.login()
+            ftp.cwd(config.cwd_ftp.format(origin))
             ftp.retrbinary("RETR {}".format(file), fp.write)
             fp.close()
             del fp
+            ftp.quit()
 
         dbc2csv.read_dbc(file, encoding=encoding)
         

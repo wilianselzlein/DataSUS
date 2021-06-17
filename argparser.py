@@ -33,14 +33,14 @@ parser.add_argument(
 parser.add_argument(
     "--year",
     help="Example 21 for 2021",
-    default="21",
+    default="20",
     type=str
 )
 
 parser.add_argument(
     "--month",
     help="Example 01 for january",
-    default="01",
+    default="",
     type=str
 )
 
