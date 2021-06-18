@@ -29,7 +29,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/wilianselzlein">
-    <img src="https://lh3.googleusercontent.com/proxy/2KHtrgrIM2RjxTB62kDfnLwBoNhPXqlKnJCD59uUdtYkJ_PfxNH8ZH-skqYTKVDhD5RMiHP_XcKDOUfY3m3lPrIla50CLhzaV_KAjyk2v76n" alt="Logo" width="200" height="80">
+    <img src="https://raw.githubusercontent.com/wilianselzlein/DataSUS/master/imgs/datasus.png" alt="Logo" width="200" height="80">
   </a>
 
   <h3 align="center">DataSUS</h3>
