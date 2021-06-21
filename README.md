@@ -28,7 +28,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/wilianselzlein">
+  <a href="https://github.com/wilianselzlein/DataSUS">
     <img src="https://raw.githubusercontent.com/wilianselzlein/DataSUS/master/imgs/datasus.png" alt="Logo" width="200" height="80">
   </a>
 
@@ -37,9 +37,9 @@
   <p align="center">
     Exploração dos dados do DataSUS
     <br />
+    ·
     <a href="https://github.com/wilianselzlein/DataSUS/issues">Report Bug</a>
     ·
-    <a href="https://github.com/wilianselzlein/DataSUS/issues">Request Feature</a>
   </p>
 </p>
 
@@ -144,6 +144,36 @@ sudo systemctl restart postgresql
 ```sh
 python3 main.py
 ```
+
+<div style="max-height:1000px;max-width:1500px;overflow:auto;">
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>Sistema</th>
+      <th style="text-align: ceenter;">Sigla</th>
+      <th>Descricao</th>
+      <th>Arquivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>SIA</td><td>AD</td><td>Laudos Diversos</td><td>ADufaamm.dbf</td></tr>
+    <tr><td>SIA</td><td>AM</td><td>Laudo de Medicamentos</td>A<td>Mufaamm.dbf</td></tr>
+    <tr><td>SIA</td><td>AMP</td><td>Laudo de Acompanhamento Multiprofissional</td><td>AMPufaamm.dbf</td></tr>
+    <tr><td>SIA</td><td>AN</td><td>Laudo de Nefrologia</td><td>ANufaamm.dbf</td></tr>
+    <tr><td>SIA</td><td>AQ</td><td>Laudo de Quimioterapia</td><td>AQufaamm.dbf</td></tr>
+    <tr><td>SIA</td><td>AR</td><td>Laudo de Radioterapia</td><td>ARufaamm.dbf</td></tr>
+    <tr><td>SIA</td><td>AB</td><td>Laudo de Acompanhamento a Cirurgia Bariátrica</td><td>ABufaamm.dbf</td></tr>
+    <tr><td>SIA</td><td>ACF</td><td>Laudo de Confecção de Fístula</td><td>ACFufaamm.dbf</td></tr>
+    <tr><td>SIA</td><td>ATD</td><td>Laudo de Tratamento Dialítico</td><td>ATDufaamm.dbf</td></tr>
+    <tr><td>SIA</td><td>PA</td><td>PRODUÇÃO AMBULATORIAL</td><td>PA UFAAMM . DBF</td></td></tr>
+    <tr><td>SIA</td><td>SAD</td><td>ATENÇÃO DOMICILIAR</td><td>SAD*. DBF</td></td></tr>
+    <tr><td>SIA</td><td>PS</td><td>RAAS – PSICOSSOCIAL</td><td>PS*. DBF</td></td></tr>
+    <tr><td>SIH</td><td>RD</td><td>reduzidas do movimento de AIH</td><td></td></tr>
+    <tr><td>SIH</td><td>SP</td><td>procedimentos hospitalares</td><td></td></tr>
+  </tbody>
+</table>
+<p>Sendo: uf – sigla da Unidade da Federação; aa – ano da competência; mm – mês da competência</p>
+</div>
 
 <!-- ROADMAP -->
 ## Roadmap and TODO list
