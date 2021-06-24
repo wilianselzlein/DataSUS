@@ -150,7 +150,7 @@ python3 main.py
   <thead>
     <tr>
       <th>Sistema</th>
-      <th style="text-align: ceenter;">Sigla</th>
+      <th style="text-align: center;">Sigla</th>
       <th>Descricao</th>
       <th>Arquivo</th>
     </tr>
@@ -174,6 +174,13 @@ python3 main.py
 </table>
 <p>Sendo: uf – sigla da Unidade da Federação; aa – ano da competência; mm – mês da competência</p>
 </div>
+
+
+### CIDS COVID
+* B342 - Infecção por coronavírus de localização não especificada
+* B972 - Coronavírus, como causa de doenças classificadas em outros capítulos
+* U049 - Síndrome Respiratória Aguda Grave – SARS
+* U071 - diagnóstico da Doença respiratória aguda devido ao COVID-19
 
 <!-- ROADMAP -->
 ## Roadmap and TODO list
